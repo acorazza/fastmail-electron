@@ -4,4 +4,6 @@ To build, download and run npm run build:appimage
 
 * Works on Arch BTW
 * System tray integration (on KDE at least - haven't tested Gnome)
-* Mailto link handling
+
+# Todo
+* Fix mailto link handling
