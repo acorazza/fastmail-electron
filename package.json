@@ -1,0 +1,49 @@
+{
+  "name": "fastmail-electron",
+  "version": "1.0.0",
+  "description": "Electron wrapper for Fastmail with KDE integration",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "build": "electron-builder",
+    "build:linux": "electron-builder --linux",
+    "build:appimage": "electron-builder --linux AppImage",
+    "build:deb": "electron-builder --linux deb",
+    "dist": "electron-builder --publish=never",
+    "pack": "electron-builder --dir"
+  },
+  "author": "AC",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^37.2.4",
+    "electron-builder": "^26.0.12",
+    "concurrently": "^9.2.0",
+    "wait-on": "^8.0.4"
+  },
+  "dependencies": {
+    "electron-store": "^10.1.0",
+    "electron-window-state": "^5.0.3"
+  },
+  "build": {
+    "appId": "com.fastmail.electron",
+    "productName": "Fastmail",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "assets/**/*"
+    ],
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Network",
+      "icon": "assets/icon.png",
+      "maintainer": "Your Name <your.email@example.com>",
+      "description": "Fastmail Email Client"
+    }
+  }
+}
